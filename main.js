@@ -1,8 +1,5 @@
-//step 0: 
-//step 1: 
-//step 2: 
-//step 3: 
-
+//create deck of cards
+//class for Cards
 class Card {
     constructor (rank, suit, value) {
       this.rank = rank
@@ -10,7 +7,7 @@ class Card {
       this.value = value
     }
   }
-  
+//class for Deck
   class Deck {
     constructor() {
       this.cards = []
@@ -58,8 +55,27 @@ class Card {
     /** for shuffling, research how to shuffl the contnents of an Array.
      * if you see "Fisher-Yates" or "Knuth", your getting warm!
      */
+    shuffle(array) {
+        //shuffle deck of cards 
+    var currentIndex = this.cards.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = this.cards[currentIndex];
+      this.cards[currentIndex] = this.cards[randomIndex];
+      this.cards[randomIndex] = temporaryValue;
+    }
+  
+    return array;
   }
+    }
   
-  const deck = new Deck()
-  
-  console.log(deck.cards)
+  const randomizedDeck1 = new Deck()
+  randomizedDeck1.shuffle();
+
