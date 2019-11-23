@@ -56,7 +56,7 @@ class Card {
      * if you see "Fisher-Yates" or "Knuth", your getting warm!
      */
     shuffle(array) {
-        //shuffle deck of cards 
+    //shuffle deck of cards 
     var currentIndex = this.cards.length, temporaryValue, randomIndex;
   
     // While there remain elements to shuffle...
@@ -74,21 +74,41 @@ class Card {
   
     return array;
   }
-
+    //splice deck in two
     splitcards(placeholder) {
-       let deck2 = this.cards.splice(0,26)
+    let deck2 = this.cards.splice(0,26)
      return placeholder
     }
     }
   
-  const randomizedDeck1 = new Deck()
-  randomizedDeck1.shuffle();
+const randomizedDeck1 = new Deck()
+randomizedDeck1.shuffle();
 //copy of main shuffled deck
  let randomizedDeck2 = randomizedDeck1.cards
+
 
 //divide randomizedDeck2 into two randomized decks of playerOneDeckOne and playerTwoDeckTwo
  const playerOneDeckOne = randomizedDeck2.splice(0,26);
  const playerTwoDeckTwo = randomizedDeck2;
 
+//playerOne and playerTwo play their top cards
+function playWar() {
+    //if playerone deck array poisiton 0 card value is greater than player two's deck array position 0 card value then push playerone's [0] card to the bottom of their deck and pop over player two's [0] card
+    if (playerOneDeckOne[0].value > playerTwoDeckTwo[0].value) {
+        playerOneDeckOne.push(playerOneDeckOne[0] && playerTwoDeckTwo.pop(playerTwoDeckTwo[0]));
+        console.log("player one wins with higher card value: " + playerOneDeckOne[0].value + " suit: " + playerOneDeckOne[0].suit + " rank: " + playerOneDeckOne[0].rank + " player two loses value: " + playerTwoDeckTwo[0].value + " suit: " + playerTwoDeckTwo[0].suit + " rank: " + playerTwoDeckTwo[0].rank);
+    }
+    else if (playerTwoDeckTwo[0].value > playerOneDeckOne[0].value) {
+        playerTwoDeckTwo.push(playerTwoDeckTwo[0] && playerOneDeckOne.pop(playerOneDeckOne[0].value));
+        console.log("player two wins higher card value: " + playerTwoDeckTwo[0].value + " suit: " + playerTwoDeckTwo[0].suit + " rank: " + playerTwoDeckTwo[0].rank) + " player one loses value: " + playerOneDeckOne[0].value + " suit: " + playerOneDeckOne[0].suit + " rank: " + playerOneDeckOne[0].rank;
+    }
+    else {
+        console.log("declare game of war");
+    }
+}
+//*/
+//playWar();
 
-
+//function playGameOfWar() {
+    //for (i = 0; i > )
+//}
