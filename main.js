@@ -74,8 +74,21 @@ class Card {
   
     return array;
   }
+
+    splitcards(placeholder) {
+       let deck2 = this.cards.splice(0,26)
+     return placeholder
+    }
     }
   
   const randomizedDeck1 = new Deck()
   randomizedDeck1.shuffle();
+//copy of main shuffled deck
+ let randomizedDeck2 = randomizedDeck1.cards
+
+//divide randomizedDeck2 into two randomized decks of playerOneDeckOne and playerTwoDeckTwo
+ const playerOneDeckOne = randomizedDeck2.splice(0,26);
+ const playerTwoDeckTwo = randomizedDeck2;
+
+
 
