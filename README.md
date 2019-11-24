@@ -8,5 +8,5 @@ The goal is to be the first player to win all 52 cards
 1. However, if the cards are the same rank, **it is a tie**. Both players will put their cards to the bottom of their deck and continue on.
 1. _The game ends when one player has won all the cards._
 
-
+:heart: :spades: :diamonds: :clubs:
 
