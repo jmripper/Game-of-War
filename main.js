@@ -133,15 +133,16 @@ function playWar() {
     console.log("Player Two wins!");
     //push winner's (playertwo) card and playerone's card to the bottom of their deck
     playerTwoDeckTwo.push(playerOneCard, playerTwoCard);
-  } else if (playerOneCard === playerTwoCard) {
-
-
+  } else if (playerOneCard.value === playerTwoCard.value) {
+     while (playerOneCard.value === playerTwoCard.value) {
+         playWar();
+     }
   }
-    else {
+  /*else {
     console.log("Tie!");
     playerOneDeckOne.push(playerOneCard);
     playerTwoDeckTwo.push(playerTwoCard);
-  }
+  }*/
   checkWinner();
 }
 
@@ -159,3 +160,5 @@ function checkWinner() {
       console.log("the game continues");
     }
   }
+
+playWar();
