@@ -134,7 +134,7 @@ function playWar() {
     //push winner's (playertwo) card and playerone's card to the bottom of their deck
     playerTwoDeckTwo.push(playerOneCard, playerTwoCard);
   } else if (playerOneCard === playerTwoCard) {
-      
+
 
   }
     else {
@@ -142,4 +142,20 @@ function playWar() {
     playerOneDeckOne.push(playerOneCard);
     playerTwoDeckTwo.push(playerTwoCard);
   }
+  checkWinner();
 }
+
+//check for if game has been won/is over
+function checkWinner() {
+    //if playerone deck has 0 cards
+    if (playerOneDeckOne.length === 0) {
+    //display playertwo has won
+      console.log("Player Two has won the game of war!");
+    //if playertwo deck has 0 cards
+    } else if (playerTwoDeckTwo.length === 0) {
+      console.log("Player Two has won the game of war!");
+    } else {
+      // the game continues
+      console.log("the game continues");
+    }
+  }
