@@ -92,7 +92,7 @@ randomizedDeck1.shuffle();
  const playerTwoDeckTwo = randomizedDeck2;
 
 //playerOne and playerTwo play their top cards
-function playWar() {
+/*function playWar2() {
     //if playerone deck array poisiton 0 card value is greater than player two's deck array position 0 card value then push playerone's [0] card to the bottom of their deck and pop over player two's [0] card
     if (playerOneDeckOne[0].value > playerTwoDeckTwo[0].value) {
         playerOneDeckOne.push(playerOneDeckOne[0] && playerTwoDeckTwo.pop(playerTwoDeckTwo[0]));
@@ -102,13 +102,44 @@ function playWar() {
         playerTwoDeckTwo.push(playerTwoDeckTwo[0] && playerOneDeckOne.pop(playerOneDeckOne[0].value));
         console.log("player two wins higher card value: " + playerTwoDeckTwo[0].value + " suit: " + playerTwoDeckTwo[0].suit + " rank: " + playerTwoDeckTwo[0].rank) + " player one loses value: " + playerOneDeckOne[0].value + " suit: " + playerOneDeckOne[0].suit + " rank: " + playerOneDeckOne[0].rank;
     }
+
+    else if (playerOneDeckOne[0].value === playerTwoDeckTwo[0].value) {
+
+    }
     else {
         console.log("declare game of war");
     }
 }
-//*/
-//playWar();
+*/
 
-//function playGameOfWar() {
-    //for (i = 0; i > )
-//}
+function playWar() {
+  //playone removes first card from deck
+  const playerOneCard = playerOneDeckOne.shift();
+  //playtwo removes first card from deck
+  const playerTwoCard = playerTwoDeckTwo.shift();
+
+  console.log(`Player One: ${playerOneCard.rank} of ${playerOneCard.suit}`);
+  console.log(`Player Two: ${playerTwoCard.rank} of ${playerTwoCard.suit}`);
+  
+  //if playerone's card value is greater then playertwo's card value
+  if (playerOneCard.value > playerTwoCard.value) {
+    //playerone wins
+    console.log("Player One wins!");
+    //push winner's (playerone) card and playertwo's card to the bottom of their deck
+    playerOneDeckOne.push(playerOneCard, playerTwoCard);
+    //if playertwo's card value is greater then playerone's card value
+  } else if (playerTwoCard.value > playerOneCard.value) {
+    //platertwo wins roung
+    console.log("Player Two wins!");
+    //push winner's (playertwo) card and playerone's card to the bottom of their deck
+    playerTwoDeckTwo.push(playerOneCard, playerTwoCard);
+  } else if (playerOneCard === playerTwoCard) {
+      
+
+  }
+    else {
+    console.log("Tie!");
+    playerOneDeckOne.push(playerOneCard);
+    playerTwoDeckTwo.push(playerTwoCard);
+  }
+}
