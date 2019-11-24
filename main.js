@@ -126,25 +126,21 @@ function playWar() {
   //if playerone's card value is greater then playertwo's card value
   if (playerOneCard.value > playerTwoCard.value) {
     //playerone wins
-    console.log("Player One wins!");
+    console.log("Winner: Player One wins!");
     //push winner's (playerone) card and playertwo's card to the bottom of their deck
     playerOneDeckOne.push(playerOneCard, playerTwoCard);
     //if playertwo's card value is greater then playerone's card value
   } else if (playerTwoCard.value > playerOneCard.value) {
     //platertwo wins roung
-    console.log("Player Two wins!");
+    console.log("Winner: Player Two wins!");
     //push winner's (playertwo) card and playerone's card to the bottom of their deck
     playerTwoDeckTwo.push(playerOneCard, playerTwoCard);
-  } else if (playerOneCard.value === playerTwoCard.value) {
-     while (playerOneCard.value === playerTwoCard.value) {
-         playWar();
-     }
-  }
-  /*else {
+  } 
+  else {
     console.log("Tie!");
     playerOneDeckOne.push(playerOneCard);
     playerTwoDeckTwo.push(playerTwoCard);
-  }*/
+  }
   checkWinner();
 }
 
@@ -162,9 +158,3 @@ function checkWinner() {
       console.log("the game continues");
     }
   }
-
-/*function playGameOfWar() {
-    let i = 0; while(i < playerOneDeckOne.length || playerTwoDeckTwo.length) {
-        playWar(); i++;
-    }
-}
