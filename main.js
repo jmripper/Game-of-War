@@ -118,19 +118,21 @@ function playWar() {
   //playtwo removes first card from deck
   const playerTwoCard = playerTwoDeckTwo.shift();
 
-  //console.log(`Player One: ${playerOneCard.rank} of ${playerOneCard.suit}`);
-  //console.log(`Player Two: ${playerTwoCard.rank} of ${playerTwoCard.suit}`);
+  console.log(`Player One: ${playerOneCard.rank} of ${playerOneCard.suit}`);
+  console.log(`Player One Deck: ${playerOneDeckOne.length}`);
+  console.log(`Player Two: ${playerTwoCard.rank} of ${playerTwoCard.suit}`);
+  console.log(`Player Two Deck: ${playerTwoDeckTwo.length}`);
   
   //if playerone's card value is greater then playertwo's card value
   if (playerOneCard.value > playerTwoCard.value) {
     //playerone wins
-    //console.log("Player One wins!");
+    console.log("Player One wins!");
     //push winner's (playerone) card and playertwo's card to the bottom of their deck
     playerOneDeckOne.push(playerOneCard, playerTwoCard);
     //if playertwo's card value is greater then playerone's card value
   } else if (playerTwoCard.value > playerOneCard.value) {
     //platertwo wins roung
-    //console.log("Player Two wins!");
+    console.log("Player Two wins!");
     //push winner's (playertwo) card and playerone's card to the bottom of their deck
     playerTwoDeckTwo.push(playerOneCard, playerTwoCard);
   } else if (playerOneCard.value === playerTwoCard.value) {
@@ -155,13 +157,13 @@ function checkWinner() {
     //if playertwo deck has 0 cards
     } else if (playerTwoDeckTwo.length === 0) {
       console.log("Player Two has won the game of war!");
-    } //else {
+    } else {
       // the game continues
-      //console.log("the game continues");
-    //}
+      console.log("the game continues");
+    }
   }
 
-function playGameOfWar() {
+/*function playGameOfWar() {
     let i = 0; while(i < playerOneDeckOne.length || playerTwoDeckTwo.length) {
         playWar(); i++;
     }
